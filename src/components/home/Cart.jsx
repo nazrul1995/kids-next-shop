@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import CartItem from "../carrds/CartItem";
+import Link from "next/link";
 
 const Cart = ({ cartItem = [] }) => {
   const [items, setItems] = useState(cartItem);
@@ -77,9 +78,9 @@ const Cart = ({ cartItem = [] }) => {
           <span className="text-primary">৳ {totalPrice}</span>
         </div>
 
-        <button className="btn btn-primary w-full mt-6">
+        <Link href={"/checkout"} className="btn btn-primary w-full mt-6">
           Proceed to Checkout
-        </button>
+        </Link>
       </div>
     </div>
   );

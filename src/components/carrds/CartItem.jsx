@@ -29,8 +29,9 @@ const CartItem = ({ item, removeItem, updateQuantity }) => {
             updateQuantity(_id, quantity - 1)
         }
     };
-
+const [loading, setLoading] = useState(false);
     const handleDelete = async () => {
+        setLoading(true);
         const confirm = await Swal.fire({
             title: "Are you sure?",
             text: "This item will be removed from your cart!",
@@ -63,6 +64,8 @@ const CartItem = ({ item, removeItem, updateQuantity }) => {
                     text: "Something went wrong.",
                 });
             }
+            setLoading(false);
+
         });
     };
 
