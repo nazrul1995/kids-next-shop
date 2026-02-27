@@ -1,57 +1,136 @@
-# Hero Kidzz - Project Assets
-<img src="assets/hero.png">
-## Overview
+🦸 Hero Kidz BD – Full Stack eCommerce Platform
 
-Hero Kidzz is a small, single-vendor e-commerce web application designed for selling children's products. This repository contains all project assets including images, icons, and media files.
+A modern full-stack eCommerce web application built with Next.js (App Router) featuring authentication, cart management, order processing, and invoice email functionality.
 
-## Features
+🌐 Live Site: https://hero-next-project.vercel.app/
 
-- 🛍️ **Product Catalog** - Browse children's toys and accessories
-- 🛒 **Shopping Cart** - Add and manage items
-- 💳 **Easy Checkout** - Safe payment processing
-- 📦 **Order Invoice** - Monitor shipments
-- 👤 **User Accounts** - Save preferences and history
-- 🎨 **Responsive Design** - Mobile-friendly interface
-- ⭐ **Product Reviews** - Customer feedback system
+🚀 Features
 
-## Starter packages
-```
-npm install react-icons mongodb bcryptjs
-```
+🔐 Google Authentication (NextAuth.js)
 
-## Colors
+🛒 Shopping Cart System
 
-```
- /* Brand */
-  --color-primary: oklch(65% 0.23 35);
-  --color-secondary: oklch(58% 0.18 30);
-  --color-accent: oklch(72% 0.20 55);
+📦 Order Creation & Storage
 
-  /* Base */
-  --color-base-100: oklch(100% 0 0);
-  --color-base-200: oklch(97% 0.01 95);
-  --color-base-300: oklch(92% 0.015 95);
+💰 Automatic Total Price Calculation
 
-  /* Neutral */
-  --color-neutral: oklch(35% 0.01 260);
-  --color-neutral-content: oklch(96% 0 0);
+📧 Invoice Email Sending
 
-  /* Feedback */
-  --color-success: oklch(70% 0.17 145);
-  --color-error: oklch(62% 0.24 28);
-```
+🗄️ MongoDB Database Integration
 
-## Getting Started
+⚡ Server Actions (Next.js 14)
 
-1. Clone the repository
-2. Extract assets to your project directory
-3. Reference images in your application
+🌍 Production Deployment on Vercel
 
-## Contributing
+🛠️ Tech Stack
 
-Follow project guidelines when adding new assets.
+Framework: Next.js 14 (App Router)
 
-## License
+Authentication: NextAuth.js (Google Provider)
 
-All assets are proprietary to Hero Kidzz.
-# Hero-Kidz-assets
+Database: MongoDB Atlas
+
+Email Service: Nodemailer (SMTP)
+
+Deployment: Vercel
+
+Language: JavaScript
+
+📂 Project Structure
+app/
+components/
+lib/
+  ├── dbConnect.js
+  ├── authOptions.js
+  ├── sendInvoiceEmail.js
+actions/
+  ├── cart.js
+  ├── order.js
+⚙️ Installation & Setup
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/hero-next-project.git
+cd hero-next-project
+2️⃣ Install Dependencies
+npm install
+3️⃣ Create Environment Variables
+
+Create a .env.local file in the root directory:
+
+MONGODB_URI=your_mongodb_connection_string
+DBNAME=your_database_name
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+NEXTAUTH_SECRET=your_random_secret
+
+EMAIL_USER=your_email
+EMAIL_PASS=your_email_app_password
+
+⚠️ Important: Never commit your .env.local file.
+
+4️⃣ Run Development Server
+npm run dev
+
+Open:
+
+http://localhost:3000
+🧾 Order & Invoice Flow
+
+User logs in with Google
+
+Adds products to cart
+
+Creates order
+
+Order is stored in MongoDB
+
+Cart is cleared
+
+Invoice email is sent automatically
+
+All sensitive operations are handled securely via Server Actions.
+
+🔐 Authentication
+
+Authentication is powered by NextAuth.js with Google OAuth integration.
+
+Session-based authentication ensures secure access to protected features.
+
+🌍 Deployment
+
+The application is deployed using Vercel.
+
+To deploy manually:
+
+vercel
+
+Make sure to configure environment variables in:
+
+Vercel → Project Settings → Environment Variables
+
+📈 Future Improvements
+
+💳 Stripe Payment Integration
+
+📊 Admin Dashboard
+
+📜 Order History Page
+
+🧾 PDF Invoice Download
+
+⭐ Product Reviews
+
+🔒 Role-based Access Control
+
+👨‍💻 Author
+
+Nazrul Islam
+
+GitHub: https://github.com/nazrul1995
+
+Email: independentnazrul@gmail.com
+
+📄 License
+
+This project is licensed under the MIT License.
