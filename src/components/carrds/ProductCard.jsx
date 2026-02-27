@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FaStar } from "react-icons/fa";
+import CartButton from "../buttons/CartButton";
 
 const ProductCard = ({ product }) => {
   const { title, image, price, ratings, reviews, sold, _id } = product;
@@ -39,8 +40,7 @@ const ProductCard = ({ product }) => {
           <span className="font-bold text-lg">৳{price}</span>
           <span className="text-sm text-gray-500">{sold} sold</span>
         </div>
-
-        <button className="btn btn-primary mt-4 w-full">Add to Cart</button>
+        <CartButton product={{...product, _id:_id.toString()}}></CartButton>
         <Link
           href={`/products/${_id}`}
           className="btn btn-primary btn-outline mt-4 w-full"

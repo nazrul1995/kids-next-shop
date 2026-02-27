@@ -3,11 +3,13 @@ import Link from "next/link";
 import { SocialButtons } from "./SocialButton";
 import { useState } from "react";
 import { postUser } from "@/actions/server/auth";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
+import Swal from "sweetalert2";
 
 export const RegisterForm = () => {
   const params = useSearchParams();
+  const router = useRouter();
   const callbackUrl = params.get("callbackUrl") || "/";
   const [form, setForm] = useState({
     name: "",
@@ -31,6 +33,8 @@ export const RegisterForm = () => {
         callbackUrl: callbackUrl,
       });
       Swal.fire("success", "Registered successfully", "success");
+      router.push(callbackUrl);
+
     } else {
       Swal.fire("erro", "Sorry", "error");
     }
