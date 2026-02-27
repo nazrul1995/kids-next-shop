@@ -10,7 +10,6 @@ export default function Home() {
   return (
     <div className="space-y-20">
       <section>
-        <Test></Test>
         <Banner></Banner>
       </section>
 
